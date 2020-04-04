@@ -1,3 +1,8 @@
+/* *****************************************************************************
+ *  Name:              Artem Slyusarenko
+ *  Last modified:     06/08/2019
+ **************************************************************************** */
+
 package root;
 
 import org.apache.poi.ss.usermodel.*;
@@ -11,30 +16,26 @@ import org.jsoup.nodes.Element;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.TreeMap;
+
 
 public class BettingInfoScrapper {
 
+    //Declare  blank sheet
     private static XSSFWorkbook workbook = new XSSFWorkbook();
     private static XSSFSheet sheet;
     private static final String url = "https://hintwise.com/";
-    //Declare  blank sheet
 
 
 
 
     public static void main(String[] args) {
-        //sheet = workbook.createSheet("Soccer");
+         // Read and write soccer data!
         readInformation("#soccer");
-        System.out.println();
-        //sheet = workbook.createSheet("Basketball");
+        // Read and write basketball data!
         readInformation("#basketball");
-        System.out.println();
-        //sheet = workbook.createSheet("Tennis");
+        // Read and write tennis data!
         readInformation("#tennis");
-        System.out.println();
-        //sheet = workbook.createSheet("Hockey");
+        // Read and write hockey data!
         readInformation("#hockey");
 
         autisizeColumns(workbook,4,8);
@@ -42,7 +43,7 @@ public class BettingInfoScrapper {
         try
         {
             //Write workbook into file system
-            FileOutputStream out = new FileOutputStream(new File("C:\\Users\\slius\\OneDrive\\Рабочий стол\\BettingInformation.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("C:\\Users\\slius\\IdeaProjects\\BettingInfoScraper\\BettingInformation.xlsx"));
             workbook.write(out);
             out.close();
         }
@@ -94,33 +95,25 @@ public class BettingInfoScrapper {
         * Fill first row of a sheet with column headers
          */
         row = sheet.createRow(rowNum++);
-        objArr = new Object[] {"Time", "Home vs Away", "League","Prediction", "Last 5 Home", "Last 5 Away",
-                " Odds Home Win", "Odds Away Win" };
-        for (Object obj : objArr)
+        for (Object obj : new String[]{"Time", "Home vs Away", "League", "Prediction", "Last 5 Home", "Last 5 Away",
+                " Odds Home Win", "Odds Away Win"})
         {
             cell = row.createCell(cellNum++);
             cell.setCellStyle(headers);
             cell.setCellValue((String)obj);
 
         }
-        objArr = null;
-
-        System.out.println("Read and write " + sportType.replace("#","") + " data!");
         String[] elementRow = new String[8];
-
-
 
         try{
             /*
-            * Extract, store and write scrapped data.
+            * Extract store and write scrapped data.
              */
             final Document bettingInfo = Jsoup.connect(url).get();
 
             for(Element rowElement : bettingInfo.select(sportType +  " table.items tr")){
 
-                if(rowElement.select(".cellStyle.cell40").text().equals("")){
-                    //Skips empty row elements at any level of the table.
-                }else{
+                if(!rowElement.select(".cellStyle.cell40").text().equals("")){
                     final String time = rowElement.select(".cellStyle.cell40").text();
                     final String teams = rowElement.select(".cellTEAMS.cellStyle").text();
                     final String division = rowElement.select(".hidden-xs.cellStyle").text();
@@ -135,15 +128,11 @@ public class BettingInfoScrapper {
                             oddsHomeWin = Double.parseDouble(rowElement.select(".homewin.winLose_Soccer.cellOdds input.btn.btn-xs.btn-info.btn-addToBlog").attr("value"));
                             oddsAwayWin = Double.parseDouble(rowElement.select("td.winLose_Soccer.cellOdds:nth-of-type(19) input.btn.btn-xs.btn-info.btn-addToBlog").attr("value"));
                             break;
-
                         case "basketball":
-
                             break;
-
-
                         case "tennis":
                             System.out.println(rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value"));
-                            //oddsHomeWin = Double.parseDouble(rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value"));
+                            oddsHomeWin = Double.parseDouble(rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value"));
                             //oddsAwayWin = Double.parseDouble(rowElement.select("td.winLose.cellOdds:nth-of-type(11) input.btn.btn-xs.btn-info.btn-addToBlog").attr("value"));
 //                            final String lastFiveHomeLose = rowElement.select("td.center.cellLast:nth-of-type(8)  div.winline-style.lose-background").text();
 //                            final String lastFiveHomeWin = rowElement.select("td.center.cellLast:nth-of-type(8)  div.winline-style.win-background").text();
@@ -153,17 +142,10 @@ public class BettingInfoScrapper {
 //                            final String lastFiveAwayWin = rowElement.select("td.center.cellLast:nth-of-type(9) div.winline-style.win-background").text();
 //                            lastFiveAway = lastFiveAway.concat(lastFiveAwayLose).concat(lastFiveAwayWin);
                             break;
-
                         case "hockey":
-
                             break;
-
                     }
-
-
-
                     //final Double oddsAwayWin = Double.parseDouble(rowElement.select("td.winLose.cellOdds:nth-of-type(11)").text());
-
 
                     String prediction = rowElement.select(".cellStyle.lr20.cell90").text();
                     prediction = prediction.replace("Away", "A");
@@ -178,8 +160,6 @@ public class BettingInfoScrapper {
                     //elementRow[5] = lastFiveAway;
                     elementRow[6] = oddsHomeWin.toString();
                     elementRow[7] = oddsAwayWin.toString();
-
-
 
                     row = sheet.createRow(rowNum++);
 
@@ -196,7 +176,6 @@ public class BettingInfoScrapper {
                             cell.setCellValue((Integer) obj);
                         }
                     }
-                    cellNum = 0;
                 }
             }
 
@@ -216,6 +195,5 @@ public class BettingInfoScrapper {
             }
         }
     }
-
 
 }
