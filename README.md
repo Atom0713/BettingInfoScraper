@@ -51,11 +51,11 @@ Add libraries to your project
 
 Go to File->Project Structure->Libraries  press plus '+' at the top left corner to add libraries
 
-![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_1.png =200x250)
+<img src="https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_1.png" width=70% height=50%>
 
 First add **jsoup** library and click **ok**
 
-![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_2.png =200x250)
+<img src="https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_2.png" width=70% height=50%>
 
 Then add Apache POI libraries:
 
@@ -64,15 +64,15 @@ Then add Apache POI libraries:
 
 Add ***.jar** files from **poi** folder
 
-![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_1.png)
+<img src="https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_1.png" width=70% height=50%>
 
 Add ***.jar** files from **poi/ooxml-lib** folder
 
-![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_2.png)
+<img src="https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_2.png" width=70% height=50%>
 
 Add ***.jar** files from **poi/lib** folder
 
-![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_3.png)
+<img src="https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_3.png" width=70% height=50%>
 
 Press *Apply* and then **ok** after all libraries are added.
 
@@ -89,7 +89,7 @@ The output file will be saved in **BettingInfoScraper/logs** folder.
 
 If no errors occured the output file should look like this
 
-![Output file](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/output-file.png)
+<img src="https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/output-file.png" width=70% height=50%>
 
 NOTE: Since this README file was created during the Coronavirus global pandemic the output file has only one entry due to the cancelation of all sports events all over the world.
 
