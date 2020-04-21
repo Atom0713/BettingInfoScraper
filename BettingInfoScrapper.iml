@@ -147,5 +147,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jsoup-1.12.1" level="project" />
+    <orderEntry type="library" name="poi-4.0.1" level="project" />
   </component>
 </module>

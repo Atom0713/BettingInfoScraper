@@ -45,8 +45,27 @@ Open BettingInforScrapper in Intellij IDEA
 
 ![Open BettingInforScraper project](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/Folder_path.png)
 
+![Select folder](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/Open_Project.png)
 
-Describe how to install / setup your local environement / add link to demo version.
+Step 5:
+
+Add libraries to your project
+
+Go to File->Project Structure->Libraries  press plus '+' at the top left corner to add libraries
+
+![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_1.png)
+
+Now **poi** folder includes libraries in a few folders (**poi/libs** and **poi/ooxml-lib** we will need all of them) and in an initial **poi** folder itself, therefore, first add **jsoup** library and pres **ok** then repeat step 5 and add **poi** libraries.
+
+![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_1.png)
+
+![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_2.png)
+
+![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_3.png)
+
+Press *Apply* whn all libraries are added.
+
+
 
 ## Code Examples
 Show examples of usage:
