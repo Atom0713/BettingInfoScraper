@@ -8,13 +8,9 @@
   - [General info](#general-info)
   - [Technologies](#technologies)
   - [Setup](#setup)
-  - [Code Examples](#code-examples)
-  - [Features](#features)
-  - [Status](#status)
-  - [Inspiration](#inspiration)
-  - [Contact](#contact)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+  - [Output file](#output-file)
+  - [Authors and acknowledgment](#authors-and-acknowledgment)
+  - [Project status](#project-status)
 
 ## General info
 The motivation behind this project is to strenthen knowledge of Java Microsof Excel and html parsing libraries.
@@ -55,55 +51,52 @@ Add libraries to your project
 
 Go to File->Project Structure->Libraries  press plus '+' at the top left corner to add libraries
 
-![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_1.png)
+![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_1.png =200x250)
 
 First add **jsoup** library and click **ok**
 
-![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_2.png)
+![Adding libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_lib_2.png =200x250)
 
 Then add Apache POI libraries:
 
  **poi** folder includes libraries in a few folders (**poi/libs** and **poi/ooxml-lib** we will need all of them) and in an initial **poi** folder itself, therefore, first add **jsoup** library and pres **ok** then repeat step 5 and add **poi** libraries.
 
 
+Add ***.jar** files from **poi** folder
+
 ![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_1.png)
+
+Add ***.jar** files from **poi/ooxml-lib** folder
 
 ![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_2.png)
 
+Add ***.jar** files from **poi/lib** folder
+
 ![Adding Apache POI libraries](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/adding_poi_lib_3.png)
 
-Press *Apply* when all libraries are added.
+Press *Apply* and then **ok** after all libraries are added.
+
+
+Step 6: Run it.
+
+Go to **src/root** right click on BettingInforScraper file and click **Run 'BattingInfoScraper.main()'**
+
+The output file will be saved in **BettingInfoScraper/logs** folder.
 
 
 
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+## Output file
 
-## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+If no errors occured the output file should look like this
 
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+![Output file](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/output-file.png)
 
-## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+NOTE: Since this README file was created during the Coronavirus global pandemic the output file has only one entry due to the cancelation of all sports events all over the world.
 
-## Inspiration
-Add here credits. Project inspired by..., based on...
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-## License
+## Authors and acknowledgment
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Artem Sliusarenko** - *Initial work* - [BettingInfoScraper](https://github.com/Atom0713/BettingInfoScraper)
 
-## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+## Project status

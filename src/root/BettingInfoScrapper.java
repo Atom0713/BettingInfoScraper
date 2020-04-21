@@ -43,7 +43,7 @@ public class BettingInfoScrapper {
         try
         {
             //Write workbook into file system
-            FileOutputStream out = new FileOutputStream(new File("C:\\Users\\slius\\IdeaProjects\\BettingInfoScraper\\BettingInformation.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("logs/BettingInformation.xlsx"));
             workbook.write(out);
             out.close();
         }
