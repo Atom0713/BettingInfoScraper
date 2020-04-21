@@ -12,10 +12,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 
-public class BettingInfoScrapper {
+public class Main {
 
     public static void main(String[] args) {
-        ReadHTML readhtml = new ReadHTML(new String[]{"#soccer", "#basketball", "#hockey", "#tennis"});
+        ReadHtml readhtml = new ReadHtml(new String[]{"#soccer", "#basketball", "#hockey", "#tennis"});
 
         XSSFWorkbook workbook = WriteToExcelSheet.getWorkbook();
 

@@ -11,13 +11,13 @@ import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
 
-public class ReadHTML {
+public class ReadHtml {
     private static final String url = "https://hintwise.com/";
 
-    public ReadHTML() {
+    public ReadHtml() {
     }
 
-    public ReadHTML(String[] sportType ) {
+    public ReadHtml(String[] sportType ) {
         for (String sport : sportType){
 
             ArrayList<String[]> data = readInformation(sport);

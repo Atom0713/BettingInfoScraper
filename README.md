@@ -108,12 +108,18 @@ NOTE: Since this README file was created during the Coronavirus global pandemic 
 ## Task list
 - [x] Parse soccer records
 - [x] Imlement output stream for soccer events
+
+- [ ] Introduce code examples of how to manage scraping of 
+sport sections {soccer, basketball, tennis, hockey} in main class.
+
 - [ ] Parse basketball records
 - [ ] Imlement output stream for baskeball events
 - [ ] Parse hockey records
 - [ ] Imlement output stream for hockey events
 - [ ] Parse tennis records
 - [ ] Imlement output stream for tennis events
+
+
 
 
 
