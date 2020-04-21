@@ -10,6 +10,7 @@
   - [Setup](#setup)
   - [Output file](#output-file)
   - [Authors and acknowledgment](#authors-and-acknowledgment)
+  - [Task list](#task-list)
   - [Project status](#project-status)
 
 ## General info
@@ -104,5 +105,22 @@ NOTE: Since this README file was created during the Coronavirus global pandemic 
 
 * **Artem Sliusarenko** - *Initial work* - [BettingInfoScraper](https://github.com/Atom0713/BettingInfoScraper)
 
+## Task list
+- [x] Parse soccer records
+- [x] Imlement output stream for soccer events
+- [ ] Parse basketball records
+- [ ] Imlement output stream for baskeball events
+- [ ] Parse hockey records
+- [ ] Imlement output stream for hockey events
+- [ ] Parse tennis records
+- [ ] Imlement output stream for tennis events
+
+
+
+
 
 ## Project status
+
+Project development slowed due to lack of time and involment in other projects.
+
+
