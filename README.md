@@ -43,9 +43,9 @@ Step 4:
 
 Open BettingInforScrapper in Intellij IDEA
 
-![Open BettingInforScraper project](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/Folder_path.png)
+![Open BettingInforScraper project](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/Open_Project.png)
 
-![Select folder](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/Open_Project.png)
+![Select folder](https://github.com/Atom0713/README_Images/blob/master/BettingInfoScraper/Folder_path.png)
 
 Step 5:
 
