@@ -24,11 +24,17 @@ The motivation behind this project is to strenthen knowledge of Java Microsof Ex
 ## Setup
 Step 1:
 
-Download and install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows)
+Download and install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows).
 
 Step 2: 
 
-Download **BettngInforScraper.zip** and extract all files into **C:\Users\\[your username]\IdeaProjects**
+For not experienced users:
+
+Download **BettngInforScraper.zip** and extract all files into **C:\Users\\[your username]\IdeaProjects** created during IntelliJ IDEA installation.
+
+For experienced users:
+
+You know what to do :smiley:
 
 Step 3: 
 
