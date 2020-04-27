@@ -11,6 +11,7 @@
   - [Output file](#output-file)
   - [Authors and acknowledgment](#authors-and-acknowledgment)
   - [Task list](#task-list)
+  - [Code examples](#code-examples)
   - [Project status](#project-status)
 
 ## General info
@@ -120,13 +121,12 @@ sport sections {soccer, basketball, tennis, hockey} in main class.
 - [ ] Imlement output stream for tennis events
 
 
-
-
+## Code examples
 
 
 
 ## Project status
 
-Project development slowed due to lack of time and involment in other projects.
+Project development slowed down due to lack of time and involment in other projects.
 
 
