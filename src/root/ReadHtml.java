@@ -73,6 +73,7 @@ public class ReadHtml {
                         oddsAwayWin = Double.parseDouble(rowElement.select("td.cellOdds input#bBlogBet3_443306").attr("value"));
                         break;
                     case "basketball":
+                        // TODO parse basketball games info 
                         System.out.println("Basketball");
                         break;
                     case "tennis":
