@@ -120,13 +120,8 @@ sport sections {soccer, basketball, tennis, hockey} in main class.
 - [ ] Imlement output stream for tennis events
 
 
-
-
-
-
-
 ## Project status
 
-Project development slowed due to lack of time and involment in other projects.
+Project development slowed due to lack of time and involvement in other projects.
 
 
