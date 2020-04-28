@@ -75,7 +75,8 @@ public class ReadHtml {
                     case "basketball":
                         // TODO parse basketball games info 
                         System.out.println("Basketball");
-                        // rebase testing No 2
+                        // merge changes to develop
+                        
                         break;
                     case "tennis":
                         //System.out.println(rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value"));
