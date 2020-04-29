@@ -1,10 +1,5 @@
 package root;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFFont;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -35,7 +30,7 @@ public class ReadHtml {
     private static ArrayList<String[]> readInformation(String sportType){
 
         ArrayList<String[]> rows = new ArrayList<String[]>();
-        rows.add(new String[]{"Time", "Home vs Away", "League", "Prediction", "Score prediction",
+        rows.add(new String[]{"Time", "Home vs Away", "League", "Prediction",
                 " Odds Home Win", "Odds Draw", "Odds Away Win"});
 
         try{
@@ -43,7 +38,7 @@ public class ReadHtml {
              * Extract store and write scrapped data.
              */
             final Document bettingInfo = Jsoup.connect(url).get();
-            //System.out.println(bettingInfo);
+            System.out.println(bettingInfo);
 
             for(Element rowElement : bettingInfo.select(sportType +  " table.items tr")){
 
@@ -57,20 +52,15 @@ public class ReadHtml {
                 final String division = rowElement.select("td.hidden-xs.cellStyle").text();
 
                 String prediction = rowElement.select(".cellStyle.lr20.cell90").text();
-                prediction = prediction.substring(0, prediction.indexOf(" "));
 
-                String scorePrediction = rowElement.select("td.cell90").text();
-                scorePrediction = scorePrediction.replace("Away", "");
-                scorePrediction = scorePrediction.replace("Draw", "");
-                scorePrediction = scorePrediction.replace("Home", "");
-
-
-                double oddsHomeWin = 0.0, oddsDraw = 0.0, oddsAwayWin = 0.0;
+                String oddsHomeWin = " ", oddsDraw = " ", oddsAwayWin = " ";
                 switch (sportType.replace("#", "")){
                     case "soccer":
-                        oddsHomeWin = Double.parseDouble(rowElement.select("td.cellOdds input#bBlogBet1_443306").attr("value"));
-                        oddsDraw = Double.parseDouble(rowElement.select("td.cellOdds input#bBlogBet2_443306").attr("value"));
-                        oddsAwayWin = Double.parseDouble(rowElement.select("td.cellOdds input#bBlogBet3_443306").attr("value"));
+
+
+                        oddsHomeWin = rowElement.select("td.cellOdds.homewin input.btn-info").attr("value");
+                        oddsDraw = (rowElement.select("td.cellOdds input[name=yt1]").attr("value")).strip();
+                        oddsAwayWin = (rowElement.select("td.cellOdds input[name=yt2]").attr("value")).strip();
                         break;
                     case "basketball":
                         // TODO parse basketball games info 
@@ -80,7 +70,7 @@ public class ReadHtml {
                         break;
                     case "tennis":
                         //System.out.println(rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value"));
-                        oddsHomeWin = Double.parseDouble(rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value"));
+                        oddsHomeWin = rowElement.select("div.tennis td.cellOdds.winLose.homewin input.btn.btn-xs.btn-default.btn-addToBlog").attr("value");
                         //oddsAwayWin = Double.parseDouble(rowElement.select("td.winLose.cellOdds:nth-of-type(11) input.btn.btn-xs.btn-info.btn-addToBlog").attr("value"));
 //                            final String lastFiveHomeLose = rowElement.select("td.center.cellLast:nth-of-type(8)  div.winline-style.lose-background").text();
 //                            final String lastFiveHomeWin = rowElement.select("td.center.cellLast:nth-of-type(8)  div.winline-style.win-background").text();
@@ -93,9 +83,7 @@ public class ReadHtml {
                     case "hockey":
                         break;
                 }
-                rows.add(new String[]{time.strip(), teams.strip(), division.strip(), prediction.strip(),
-                        scorePrediction.strip(), Double.toString(oddsHomeWin), Double.toString(oddsDraw),
-                        Double.toString(oddsAwayWin)});
+                rows.add(new String[]{time.strip(), teams.strip(), division.strip(), prediction.strip(), oddsHomeWin, oddsDraw, oddsAwayWin});
             }
 
         }catch (Exception ex){
