@@ -59,8 +59,8 @@ public class ReadHtml {
 
 
                         oddsHomeWin = rowElement.select("td.cellOdds.homewin input.btn-info").attr("value");
-                        oddsDraw = (rowElement.select("td.cellOdds input[name=yt1]").attr("value")).strip();
-                        oddsAwayWin = (rowElement.select("td.cellOdds input[name=yt2]").attr("value")).strip();
+                        oddsDraw = (rowElement.select("td.cellOdds input[name=yt1]").attr("value"));
+                        oddsAwayWin = (rowElement.select("td.cellOdds input[name=yt2]").attr("value"));
                         break;
                     case "basketball":
                         // TODO parse basketball games info 
